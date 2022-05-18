@@ -5,9 +5,13 @@ const app = express()
 app.listen('4001')
 
 
-let author = 'João'
+// meddleware
+
+app.use(express.json())
 
 
-app.route('/:id').delete((req,res) => {
-    res.send(req.params.id)
-})
+app.route('/').get((req,res) => res.send(req.query.name))
+
+app.route('/').put((req,res) => res.send(req.body.author))
+
+app.route('/:parametro').get( (req,res) => res.send(req.params.parametro))
