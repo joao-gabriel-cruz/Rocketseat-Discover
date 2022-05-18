@@ -30,6 +30,13 @@ function updateUsers(id){
   .then(res => console.log(res))
   .catch(err => console.error(err))
 }
+function deleteUser(id){
+  axios.delete(`${url}/${id}`)
+  .then(res => console.log(res))
+  .catch(err => console.error(err))
+}
+
+
 
 const newUser ={
   name: 'Dione',
@@ -42,7 +49,8 @@ const updateUser = {
    city: 'Colombia'
 } 
 
-updateUsers(3)
-getUser(3)
+deleteUser(1)
+//updateUsers(3)
+getUser(1)
 getUsers();
 //addNewUser()
