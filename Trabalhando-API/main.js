@@ -7,5 +7,18 @@ function getUsers() {
     })
     .catch((err) => console.error(err));
 }
+function addNewUser(){
+  axios.post(url, newUser)
+  .then(res => console.log(res))
+  .catch(err => console.error(err))
+}
+
+
+const newUser ={
+  name: 'Dione',
+  avatar: 'http://picsum.photo/200/300',
+   city: 'Rio Grande do Sul'
+}
 
 getUsers();
+//addNewUser()
