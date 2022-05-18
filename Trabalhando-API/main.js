@@ -12,7 +12,6 @@ function addNewUser(){
   .then(res => console.log(res))
   .catch(err => console.error(err))
 }
-
 function getUser(id){
   axios.get(`${url}/${id}`)
   .then(res =>{
@@ -26,12 +25,24 @@ function getUser(id){
   })
   .catch(err => console.error(err))
 }
+function updateUsers(id){
+  axios.put(`${url}/${id}`,updateUser)
+  .then(res => console.log(res))
+  .catch(err => console.error(err))
+}
 
 const newUser ={
   name: 'Dione',
-  avatar: 'http://picsum.photo/200/300',
+  avatar: 'https://picsum.photo/200/300',
    city: 'Rio Grande do Sul'
 }
-getUser(1)
+const updateUser = {
+  name: 'Valdo',
+  avatar: 'https://picsum.photo/200/300',
+   city: 'Colombia'
+} 
+
+updateUsers(3)
+getUser(3)
 getUsers();
 //addNewUser()
