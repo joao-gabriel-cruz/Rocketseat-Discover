@@ -4,9 +4,7 @@ const app = express()
 
 app.listen('4001')
 
+//middleware
+app.use(express.json())
 
-
-app.route('/').get((req,res)=>{res.send('hello')})
-
-app.route('/sobre').get((req,res)=>{res.send('hello sobre')})
-
+app.route('/').post((req,res) => res.send(req.body))
