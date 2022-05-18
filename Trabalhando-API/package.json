@@ -2,7 +2,9 @@
   "name": "trabalhando-api",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
   "keywords": [],
   "author": "João Gabriel",
   "license": "ISC",
