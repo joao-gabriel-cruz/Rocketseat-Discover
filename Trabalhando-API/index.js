@@ -4,11 +4,12 @@ const app = express()
 
 app.listen('4001')
 
-
-// meddleware
-app.use(express.json())
-
-app.route('/').post( (req,res) => {
-    const {nome, cidade} = req.body
-   res.send(`meu nome é ${nome} e minha cidade é ${cidade}`)
+app.route('/').get( (req,res) => {
+    res.send('hello')
+})
+app.route('/:var').get( (req,res) => {
+    res.send(req.params.var)
+})
+app.route('/identidade/:nome').get( (req,res) => {
+    res.send(req.params.nome)
 })
